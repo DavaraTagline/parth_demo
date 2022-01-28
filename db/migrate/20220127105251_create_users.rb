@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :gender
       t.string :state
       t.string :city
-      t.string :hobby
+      t.string :hobby, array: true
 
       t.timestamps
     end
