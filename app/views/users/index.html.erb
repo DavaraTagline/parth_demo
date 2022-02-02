@@ -1,0 +1,31 @@
+<br>
+<%= link_to "Add New User", new_user_path %>
+
+<h1>Current Users List :- </h1>
+<table border=2 >
+    <tr>
+        <th>ID</th>
+        <th>UserName</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>State</th>
+        <th>City</th>
+        <th>Hobby</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <% @users.each do |user| %>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.username %></td>
+            <td><%= user.gender %></td>
+            <td><%= user.email %></td>
+            <td><%= user.state %></td>
+            <td><%= user.city %></td>
+            <td><%= user.hobby %></td>
+            <td><%= link_to "Edit", edit_user_path(user)%></td>
+            <td><%= link_to "Destroy", user_path(user),  data: { turbo_method: :delete, turbo_confirm: "Are you Sure ?" } %></td>
+        </tr>
+    <% end %>
+</table>
+    

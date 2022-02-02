@@ -1,0 +1,45 @@
+<h1> New User </h1>
+
+<%= form_with model: @user do |form| %>
+    <div>
+        <%= form.label :username, "Enter Your Username :- " %>
+        <%= form.text_field :username %><br>
+    </div><br>
+    
+    <div>
+        <%= form.label :gender, "Select Your Gender :- " %>
+        <%= form.radio_button :gender, "male" %>
+        <%= form.label :gender_male, "Male"%>
+        <%= form.radio_button :gender, "female" %>
+        <%= form.label :gender_female, "Female" %><br>
+    </div><br>
+    
+    <div>
+        <%= form.label :Email, "Enter Your Email :- "%>
+        <%= form.text_field :email %><br>
+    </div><br>
+
+    <div>
+        <%= form.label :state, "Select Your State :- "%>
+        <%= form.select :state, [["Gujarat","Gujarat"],["Rajasthan","Rajasthan"],["Maharastra","Maharastra"]], selected:"Rajasthan" %><br>
+    </div><br>
+
+    <div>
+        <%= form.label :city, "Select Your City :- "%>
+        <%= form.select :city, [["Surat","Surat"],["Vadodara","Vadodara"],["Mumbai","Mumbai"],["Pune","Pune"],["Jaipur","Jaipur"],["Udaipur","Udaipur"]] %><br>
+    </div><br>
+
+    <div>
+        <%= form.label :select_hobby, "Select Your Hobby :- "%>
+        <%= form.check_box :hobby, {multiple: true}, "reading", nil %>
+        <%= form.label :check_reading, "Reading" %>
+        <%= form.check_box :hobby, {multiple: true}, "sport", nil %>
+        <%= form.label :check_sport, "Sport" %>
+        <%= form.check_box :hobby, {multiple: true}, "travelling", nil %>
+        <%= form.label :check_travelling, "Travelling" %>
+    </div><br>
+
+    <div>   
+        <%= form.submit %>
+    </div>
+<% end %>

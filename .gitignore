@@ -66,5 +66,5 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 
-# Ignore Database.yml
+# Ignore Database.yml and initial commit
 config/database.yml
