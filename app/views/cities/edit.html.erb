@@ -1,0 +1,21 @@
+<br>
+<h1>Edit City Details </h1><br>
+<%= form_with model: @city do |form| %>
+    
+    <div style="color:red;">
+        <% @city.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+        <% end %>
+    </div><br>
+    
+    <div>
+        <%= form.label :city_name, "Your City Name :- " %>
+        <%= form.text_field :city_name %><br>
+    </div><br>
+    
+    <div>   
+        <%= form.submit %>
+    </div>
+    
+<% end %>
+

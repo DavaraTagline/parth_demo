@@ -1,0 +1,26 @@
+<br>
+<h1> New City </h1>
+<br>
+<%= form_with model: @city do |form| %>
+    
+    <div style="color:red;">
+        <% @city.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+        <% end %>
+    </div><br>
+    
+    <div>
+        <%= form.label :state_id, "Select Your State :- " %>
+        <%= form.collection_select :state_id, State.order(:id), :id, :state_name %>
+    </div><br>
+    
+    <div>
+        <%= form.label :city_name, "Enter Your City Name :- " %>
+        <%= form.text_field :city_name %>
+    </div><br><br>
+
+    <div>   
+        <%= form.submit %>
+    </div>
+
+<% end %>

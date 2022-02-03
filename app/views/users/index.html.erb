@@ -1,8 +1,9 @@
-<br>
-<%= link_to "Add New User", new_user_path %>
 
-<h1>Current Users List :- </h1>
-<table border=2 >
+<br>
+<%= link_to " => Add New User", new_user_path %>
+<br><br>
+<h1>Current Users List :- </h1><br>
+<table border=2 class="table table-success table-striped table-bordered border-dark" >
     <tr>
         <th>ID</th>
         <th>UserName</th>
@@ -20,8 +21,8 @@
             <td><%= user.username %></td>
             <td><%= user.gender %></td>
             <td><%= user.email %></td>
-            <td><%= user.state %></td>
-            <td><%= user.city %></td>
+            <td><%= user.state_id %></td>
+            <td><%= user.city_id %></td>
             <td><%= user.hobby %></td>
             <td><%= link_to "Edit", edit_user_path(user)%></td>
             <td><%= link_to "Destroy", user_path(user),  data: { turbo_method: :delete, turbo_confirm: "Are you Sure ?" } %></td>

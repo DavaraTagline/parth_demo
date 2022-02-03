@@ -1,5 +1,13 @@
-<h1>Edit User</h1>
+<br>
+<h1>Edit User</h1><br>
 <%= form_with model: @user do |form| %>
+    
+    <div style="color:red;">
+        <% @user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+        <% end %>
+    </div><br>
+    
     <div>
         <%= form.label :username, "Enter Your Username :- " %>
         <%= form.text_field :username %><br>
@@ -20,12 +28,12 @@
 
     <div>
         <%= form.label :state, "Select Your State :- " %>
-        <%= form.select :state, [["Gujarat","Gujarat"],["Rajasthan","Rajasthan"],["Maharastra","Maharastra"]] %><br>
+        <%= form.collection_select :state_id, State.order(:id), :id, :state_name %><br>
     </div><br>
 
     <div>
         <%= form.label :city, "Select Your City :- "%>
-        <%= form.select :city, [["Surat","Surat"],["Vadodara","Vadodara"],["Mumbai","Mumbai"],["Pune","Pune"],["Jaipur","Jaipur"],["Udaipur","Udaipur"]] %><br>
+        <%= form.collection_select :city_id, City.order(:id), :id, :city_name %><br>
     </div><br>
 
     <div>

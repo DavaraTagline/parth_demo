@@ -1,0 +1,8 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "esbuild": "^0.14.16",
+    "jquery": "^3.6.0"
+  }
+}

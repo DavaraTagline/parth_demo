@@ -1,9 +1,19 @@
-<h1> New User </h1>
 
-<%= form_with model: @user do |form| %>
+<br><br>
+<h1> New User :- </h1>
+<br>
+
+<%= form_with model: @user , data: {turbo: false}  do |form| %>
+    
+    <div style="color:red;">
+        <% @user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+        <% end %>
+    </div><br>
+    
     <div>
         <%= form.label :username, "Enter Your Username :- " %>
-        <%= form.text_field :username %><br>
+        <%= form.text_field :username %>
     </div><br>
     
     <div>
@@ -11,22 +21,24 @@
         <%= form.radio_button :gender, "male" %>
         <%= form.label :gender_male, "Male"%>
         <%= form.radio_button :gender, "female" %>
-        <%= form.label :gender_female, "Female" %><br>
+        <%= form.label :gender_female, "Female" %>
     </div><br>
     
     <div>
         <%= form.label :Email, "Enter Your Email :- "%>
-        <%= form.text_field :email %><br>
+        <%= form.text_field :email %>
     </div><br>
 
     <div>
-        <%= form.label :state, "Select Your State :- "%>
-        <%= form.select :state, [["Gujarat","Gujarat"],["Rajasthan","Rajasthan"],["Maharastra","Maharastra"]], selected:"Rajasthan" %><br>
+        <%= form.label :state_id, "Select Your State :- "%>
+        <%= form.collection_select :state_id, State.order(:id), :id, :state_name %>
     </div><br>
-
+    
     <div>
-        <%= form.label :city, "Select Your City :- "%>
-        <%= form.select :city, [["Surat","Surat"],["Vadodara","Vadodara"],["Mumbai","Mumbai"],["Pune","Pune"],["Jaipur","Jaipur"],["Udaipur","Udaipur"]] %><br>
+        <%= form.label :city_id, "Select Your City :- "%>
+        <%#= form.collection_select :city, City.all, :city_name, :city_name %>
+        <%#= form.collection_select :city_id, City.order(:id), :id, :city_name %>
+        <%= select_tag 'user[city_id]', options_from_collection_for_select(City.all, :id, :city_name) %>
     </div><br>
 
     <div>
@@ -43,3 +55,4 @@
         <%= form.submit %>
     </div>
 <% end %>
+

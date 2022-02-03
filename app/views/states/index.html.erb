@@ -1,0 +1,22 @@
+<br>
+<%= link_to "=> Add New State", new_state_path %><br><br>
+<h1>Current States :- </h1><br>
+<table border=2 class="table table-success table-striped table-bordered border-dark" >
+    <tr>
+        <th>ID</th>
+        <th>State_name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <% @states.each do |state| %>
+        <tr>
+            <td><%= state.id %></td>
+            <td><%= state.state_name %></td>
+            <td><%= link_to "Edit", edit_state_path(state)%></td>
+            <td><%= link_to "Destroy", state_path(state),  data: { turbo_method: :delete, turbo_confirm: "Are you Sure ?" } %></td>
+        </tr>
+    <% end %>
+</table>
+
+
+    
