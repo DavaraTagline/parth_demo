@@ -2,6 +2,8 @@ class UsersController < ApplicationController
     
     def index
         @users = User.order(:id)
+        @states = State.all
+        @cities = City.all
     end
 
     def new

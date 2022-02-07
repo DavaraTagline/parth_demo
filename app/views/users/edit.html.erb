@@ -28,12 +28,12 @@
 
     <div>
         <%= form.label :state, "Select Your State :- " %>
-        <%= form.collection_select :state_id, State.order(:id), :id, :state_name %><br>
+        <%= form.collection_select :state_id, State.order(:id), :id, :name %><br>
     </div><br>
 
     <div>
         <%= form.label :city, "Select Your City :- "%>
-        <%= form.collection_select :city_id, City.order(:id), :id, :city_name %><br>
+        <%= form.collection_select :city_id, City.order(:id), :id, :name %><br>
     </div><br>
 
     <div>

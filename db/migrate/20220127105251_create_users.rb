@@ -4,10 +4,9 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :username
       t.string :email
       t.string :gender
-      t.string :state
-      t.string :city
       t.string :hobby, array: true
-
+      t.references :state, null: false, foreign_key: true
+      t.references :city, null: false, foreign_key: true
       t.timestamps
     end
   end

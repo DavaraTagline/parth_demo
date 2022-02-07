@@ -21,8 +21,8 @@
             <td><%= user.username %></td>
             <td><%= user.gender %></td>
             <td><%= user.email %></td>
-            <td><%= user.state_id %></td>
-            <td><%= user.city_id %></td>
+            <td><%= State.find(user.state_id).name %></td>
+            <td><%= City.find(user.city_id).name %></td>
             <td><%= user.hobby %></td>
             <td><%= link_to "Edit", edit_user_path(user)%></td>
             <td><%= link_to "Destroy", user_path(user),  data: { turbo_method: :delete, turbo_confirm: "Are you Sure ?" } %></td>

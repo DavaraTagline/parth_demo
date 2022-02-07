@@ -1,4 +1,5 @@
 class State < ApplicationRecord
     has_many :cities
-    validates :state_name, presence: true
+    has_many :users
+    validates :name, presence: true
 end

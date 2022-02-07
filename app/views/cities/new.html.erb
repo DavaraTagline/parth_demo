@@ -11,12 +11,12 @@
     
     <div>
         <%= form.label :state_id, "Select Your State :- " %>
-        <%= form.collection_select :state_id, State.order(:id), :id, :state_name %>
+        <%= form.collection_select :state_id, State.order(:id), :id, :name %>
     </div><br>
     
     <div>
-        <%= form.label :city_name, "Enter Your City Name :- " %>
-        <%= form.text_field :city_name %>
+        <%= form.label :name, "Enter Your City Name :- " %>
+        <%= form.text_field :name %>
     </div><br><br>
 
     <div>   

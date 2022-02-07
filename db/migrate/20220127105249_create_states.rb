@@ -1,9 +1,7 @@
 class CreateStates < ActiveRecord::Migration[7.0]
   def change
     create_table :states do |t|
-      t.string :state_id
-      t.string :state_name
-
+      t.string :name
       t.timestamps
     end
   end

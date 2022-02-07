@@ -31,14 +31,14 @@
 
     <div>
         <%= form.label :state_id, "Select Your State :- "%>
-        <%= form.collection_select :state_id, State.order(:id), :id, :state_name %>
+        <%= form.collection_select :state_id, State.order(:id), :id, :name %>
     </div><br>
     
     <div>
         <%= form.label :city_id, "Select Your City :- "%>
         <%#= form.collection_select :city, City.all, :city_name, :city_name %>
         <%#= form.collection_select :city_id, City.order(:id), :id, :city_name %>
-        <%= select_tag 'user[city_id]', options_from_collection_for_select(City.all, :id, :city_name) %>
+        <%= select_tag 'user[city_id]', options_from_collection_for_select(City.all, :id, :name) %>
     </div><br>
 
     <div>

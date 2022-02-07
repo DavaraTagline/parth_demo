@@ -1,4 +1,5 @@
 class City < ApplicationRecord
   belongs_to :state
-  validates :city_name, presence: true
+  has_many :users
+  validates :name, presence: true
 end
